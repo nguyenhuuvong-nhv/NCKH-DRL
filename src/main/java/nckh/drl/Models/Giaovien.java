@@ -3,36 +3,35 @@ package nckh.drl.Models;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "SINHVIEN")
-public class Sinhvien {
-	private String maSinhVien;
-	private String tenSinhVien;
+@Table(name= "GIAOVIEN")
+public class Giaovien {
+	
+	private String maGiaoVien;
+	private String tenGiaoVien;
 	private String ngaySinh;
 	private String soDienThoai;
 	private String gmail;
-	private String maLop;
 	private String status;
 	
-	public Sinhvien() {
+	public Giaovien() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getMaSinhVien() {
-		return maSinhVien;
+	public String getMaGiaoVien() {
+		return maGiaoVien;
 	}
 
-	public void setMaSinhVien(String maSinhVien) {
-		this.maSinhVien = maSinhVien;
+	public void setMaGiaoVien(String maGiaoVien) {
+		this.maGiaoVien = maGiaoVien;
 	}
 
-	public String getTenSinhVien() {
-		return tenSinhVien;
+	public String getTenGiaoVien() {
+		return tenGiaoVien;
 	}
 
-	public void setTenSinhVien(String tenSinhVien) {
-		this.tenSinhVien = tenSinhVien;
+	public void setTenGiaoVien(String tenGiaoVien) {
+		this.tenGiaoVien = tenGiaoVien;
 	}
 
 	public String getNgaySinh() {
@@ -59,14 +58,6 @@ public class Sinhvien {
 		this.gmail = gmail;
 	}
 
-	public String getMaLop() {
-		return maLop;
-	}
-
-	public void setMaLop(String maLop) {
-		this.maLop = maLop;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -74,7 +65,5 @@ public class Sinhvien {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-
 	
 }
