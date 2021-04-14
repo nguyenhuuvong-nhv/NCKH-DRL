@@ -1,15 +1,25 @@
 package nckh.drl.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ACCOUNTS")
 public class Accounts {
 
+	@Id
+	@Column(name="USERNAME")
 	private String userName;
+	
+	@Column(name="PASSWORDS")
 	private String passWord;
+	
+	@Column(name="ROLE")
 	private String role;
+	
+	@Column(name="STATUS")
 	private String status;
 	
 	public Accounts() {
