@@ -1,14 +1,27 @@
 package nckh.drl.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+import org.springframework.context.annotation.Primary;
+
+
 @Table(name= "CANBOLOP")
 public class Canbolop {
+	
+	@Id
+	@Column(name="MASINHVIEN")
 	private String maSinhVien;
+	
+	@Column(name ="MALOPSINHHOAT")
 	private String maLopSinhHoat;
+	
+	@Column(name="STARTTIME")
 	private String startTime;
+	
+	@Column(name="ENDTIME")
 	private String endTime;
 	
 	public Canbolop() {
