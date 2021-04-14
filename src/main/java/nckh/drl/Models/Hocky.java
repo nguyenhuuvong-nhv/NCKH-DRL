@@ -1,13 +1,20 @@
 package nckh.drl.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="HOCKY")
 public class Hocky {
+	
+	@Id
+	@Column(name="MAHOCKY")
 	private String maHocKy;
+	@Column(name="STARTTIME")
 	private String startTime;
+	@Column(name="ENDTIME")
 	private String endTime;
 	
 	public Hocky() {
