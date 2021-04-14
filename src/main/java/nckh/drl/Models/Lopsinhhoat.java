@@ -1,13 +1,18 @@
 package nckh.drl.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="LOPSINHHOAT")
 public class Lopsinhhoat {
 	
+	@Id
+	@Column(name="MALOP")
 	private String maLop;
+	@Column(name="MANGANH")
 	private String maNganh;
 	
 	public Lopsinhhoat() {

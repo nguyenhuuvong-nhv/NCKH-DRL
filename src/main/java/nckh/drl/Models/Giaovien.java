@@ -1,17 +1,26 @@
 package nckh.drl.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name= "GIAOVIEN")
 public class Giaovien {
 	
+	@Id
+	@Column(name="MAGIAOVIEN")
 	private String maGiaoVien;
+	@Column(name="TENGIAOVIEN")
 	private String tenGiaoVien;
+	@Column(name="NGAYSINH")
 	private String ngaySinh;
+	@Column(name="SODIENTHOAI")
 	private String soDienThoai;
+	@Column(name="GMAIL")
 	private String gmail;
+	@Column(name="STATUS")
 	private String status;
 	
 	public Giaovien() {
