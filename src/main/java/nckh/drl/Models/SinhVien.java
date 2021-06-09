@@ -1,31 +1,43 @@
 package nckh.drl.Models;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "SINHVIEN")
-public class Sinhvien {
+@Table(name = "sinhvien")
+public class SinhVien {
 	@Id
-	@Column(name="MASINHVIEN")
+	@Column(name="masinhvien")
 	private String maSinhVien;
-	@Column(name="TENSINHVIEN")
-	private String tenSinhVien;
-	@Column(name="NGAYSINH")
-	private String ngaySinh;
-	@Column(name="SODIENTHOAI")
-	private String soDienThoai;
-	@Column(name="GMAIL")
-	private String gmail;
-	@Column(name="MALOP")
-	private String maLop;
-	@Column(name="STATUS")
-	private String status;
 	
-	public Sinhvien() {
+	@Column(name="tensinhvien")
+	private String tenSinhVien;
+	
+	
+	@Column(name="ngaysinh")
+	private Date ngaySinh;
+	
+	@Column(name="sodienthoai")
+	private String soDienThoai;
+	
+	@Column(name="gmail")
+	private String gmail;
+	
+	@ManyToOne
+	@JoinColumn(name = "malop")
+	private LopSinhHoat lopSinhHoat;
+	
+	@Column(name="trangthai")
+	private int trangThai;
+	
+	public SinhVien() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -45,11 +57,11 @@ public class Sinhvien {
 		this.tenSinhVien = tenSinhVien;
 	}
 
-	public String getNgaySinh() {
+	public Date getNgaySinh() {
 		return ngaySinh;
 	}
 
-	public void setNgaySinh(String ngaySinh) {
+	public void setNgaySinh(Date ngaySinh) {
 		this.ngaySinh = ngaySinh;
 	}
 
@@ -69,21 +81,23 @@ public class Sinhvien {
 		this.gmail = gmail;
 	}
 
-	public String getMaLop() {
-		return maLop;
+	public LopSinhHoat getLopSinhHoat() {
+		return lopSinhHoat;
 	}
 
-	public void setMaLop(String maLop) {
-		this.maLop = maLop;
+	public void setLopSinhHoat(LopSinhHoat lopSinhHoat) {
+		this.lopSinhHoat = lopSinhHoat;
 	}
 
-	public String getStatus() {
-		return status;
+	public int getTrangThai() {
+		return trangThai;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setTrangThai(int trangThai) {
+		this.trangThai = trangThai;
 	}
+
+	
 	
 
 	

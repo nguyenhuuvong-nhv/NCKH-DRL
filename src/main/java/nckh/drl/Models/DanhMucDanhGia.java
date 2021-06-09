@@ -1,22 +1,29 @@
 package nckh.drl.Models;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="DANHMUCDANHGIA")
-public class Danhmucdanhgia {
+@Table(name ="danhmucdanhgia")
+public class DanhMucDanhGia {
 	
 	@Id
-	@Column(name="MADANHPHUC")
+	@Column(name="madanhmuc")
 	private String maDanhMuc;
 	
-	@Column(name="TENDANHMUC")
+	@Column(name="tendanhmuc")
 	private String tenDanhMuc;
 	
-	public Danhmucdanhgia() {
+	@OneToMany(mappedBy = "danhMucDanhGia",fetch = FetchType.LAZY)
+	private Collection<NoiDungDanhGia> noiDungDanhGias;
+	
+	public DanhMucDanhGia() {
 		// TODO Auto-generated constructor stub
 	}
 

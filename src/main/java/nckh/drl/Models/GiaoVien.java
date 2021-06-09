@@ -6,24 +6,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "GIAOVIEN")
-public class Giaovien {
+@Table(name= "giaovien")
+public class GiaoVien {
 	
 	@Id
-	@Column(name="MAGIAOVIEN")
+	@Column(name="magiaovien")
 	private String maGiaoVien;
-	@Column(name="TENGIAOVIEN")
+	@Column(name="tengiaovien")
 	private String tenGiaoVien;
-	@Column(name="NGAYSINH")
+	@Column(name="ngaysinh")
 	private String ngaySinh;
-	@Column(name="SODIENTHOAI")
+	@Column(name="sodienthoai")
 	private String soDienThoai;
-	@Column(name="GMAIL")
+	@Column(name="gmail")
 	private String gmail;
-	@Column(name="STATUS")
-	private String status;
+	@Column(name="trangthai")
+	private String trangthai;
 	
-	public Giaovien() {
+	public GiaoVien() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -67,12 +67,14 @@ public class Giaovien {
 		this.gmail = gmail;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getTrangthai() {
+		return trangthai;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setTrangthai(String trangthai) {
+		this.trangthai = trangthai;
 	}
+
+	
 	
 }

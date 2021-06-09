@@ -1,21 +1,35 @@
 package nckh.drl.Models;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+
 @Entity
-@Table(name = "NGANH")
+@Table(name = "nganh")
 public class Nganh {
 	
 	@Id
-	@Column(name="MANGANH")
+	@Column(name="manganh")
 	private String maNganh;
-	@Column(name="TENNGANH")
+	
+	@Column(name="tennganh")
 	private String tenNganh;
-	@Column(name="MAKHOA")
-	private String maKhoa;
+	
+	@ManyToOne
+	@JoinColumn(name = "makhoa")
+	private Khoa khoa;
+	
+	@OneToMany(mappedBy = "nganh",fetch = FetchType.LAZY)
+	private Collection<LopSinhHoat> lopsinhhoats;
 	
 	public Nganh() {
 		// TODO Auto-generated constructor stub
@@ -37,13 +51,15 @@ public class Nganh {
 		this.tenNganh = tenNganh;
 	}
 
-	public String getMaKhoa() {
-		return maKhoa;
+	public Khoa getKhoa() {
+		return khoa;
 	}
 
-	public void setMaKhoa(String maKhoa) {
-		this.maKhoa = maKhoa;
+	public void setKhoa(Khoa khoa) {
+		this.khoa = khoa;
 	}
+
+	
 	
 
 }
